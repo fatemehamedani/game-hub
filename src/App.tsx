@@ -1,5 +1,6 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
+import { HiOutlineCube } from "react-icons/hi";
 
 const App = () => {
   return (
@@ -12,7 +13,12 @@ const App = () => {
         gridTemplateRows: "auto 2fr",
       }}
     >
-      <div className="bg-amber-600 py-2" style={{ gridArea: "nav" }}>
+      <div
+        className="bg-amber-600 py-2 flex items-center"
+        style={{ gridArea: "nav" }}
+      >
+        <HiOutlineCube className="text-5xl" />
+
         <NavBar />
       </div>
       <div
