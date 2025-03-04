@@ -1,24 +1,19 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-import { HiOutlineCube } from "react-icons/hi";
+import Theme from "./theme";
 
 const App = () => {
   return (
     <div
-      className="grid w-screen
-    "
+      className="grid w-screen"
       style={{
         gridTemplateAreas: `"nav nav" "aside main"`,
         gridTemplateColumns: "1fr 1fr",
         gridTemplateRows: "auto 2fr",
       }}
     >
-      <div
-        className="bg-amber-600 py-2 flex items-center"
-        style={{ gridArea: "nav" }}
-      >
-        <HiOutlineCube className="text-5xl" />
-
+      <Theme />
+      <div style={{ gridArea: "nav" }}>
         <NavBar />
       </div>
       <div
