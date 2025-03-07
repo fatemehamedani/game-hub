@@ -1,26 +1,40 @@
-import React, { useState, useEffect } from "react";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
+import React, { useEffect, useState } from "react";
 
 const Theme = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
+    const savedMode = localStorage.getItem("displayMode");
+
+    if (savedMode === "dark") {
+      setDarkMode(true);
       document.documentElement.classList.add("dark");
     } else {
+      setDarkMode(false);
       document.documentElement.classList.remove("dark");
     }
-  }, [darkMode]);
+    setDarkMode(savedMode === "dark" ? true : false);
+  }, []);
+
+  const toggleDisplayMode = () => {
+    if (darkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("displayMode", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("displayMode", "dark");
+    }
+    setDarkMode(!darkMode);
+  };
 
   return (
-    <div>
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        className="p-2 text-lg rounded-full bg-gray-800 text-white hover:bg-gray-600"
-      >
-        {darkMode ? <MdLightMode /> : <MdDarkMode />}
-      </button>
-    </div>
+    <MdDarkMode
+      onClick={toggleDisplayMode}
+      className={`text-3xl cursor-pointer transition-colors duration-300 ${
+        darkMode ? "text-white" : "text-black"
+      }`}
+    />
   );
 };
 

@@ -12,9 +12,12 @@ const App = () => {
         gridTemplateRows: "auto 2fr",
       }}
     >
-      <Theme />
-      <div style={{ gridArea: "nav" }}>
+      <div
+        className="flex justify-between items-center"
+        style={{ gridArea: "nav" }}
+      >
         <NavBar />
+        <Theme />
       </div>
       <div
         className="bg-amber-400 py-2 flex justify-center"
