@@ -1,6 +1,6 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Theme from "./theme";
+import Theme from "./Theme";
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         style={{ gridArea: "nav" }}
       >
         <NavBar />
-        <Theme />
+        {/* <Theme /> */}
       </div>
       <div
         className="bg-amber-400 py-2 flex justify-center"
