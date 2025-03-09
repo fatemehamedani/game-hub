@@ -1,6 +1,7 @@
 import "./App.css";
+import GameGrid from "./components/GameGrid";
 import NavBar from "./components/NavBar";
-import Theme from "./Theme";
+// import Theme from "./Theme";
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
         className="bg-blue-600 py-2 flex justify-center"
         style={{ gridArea: "main" }}
       >
-        Main
+        <GameGrid />
       </div>
     </div>
   );
