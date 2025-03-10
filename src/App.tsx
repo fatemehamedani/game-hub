@@ -21,13 +21,13 @@ const App = () => {
         {/* <Theme /> */}
       </div>
       <div
-        className="bg-amber-400 py-2 flex justify-center"
+        className="py-2 flex justify-center"
         style={{ gridArea: "aside" }}
       >
         Aside
       </div>
       <div
-        className="bg-blue-600 py-2 flex justify-center"
+        className="py-2 flex justify-center"
         style={{ gridArea: "main" }}
       >
         <GameGrid />
