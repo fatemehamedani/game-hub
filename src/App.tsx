@@ -20,16 +20,10 @@ const App = () => {
         <NavBar />
         {/* <Theme /> */}
       </div>
-      <div
-        className="py-2 flex justify-center"
-        style={{ gridArea: "aside" }}
-      >
+      <div className="py-2 flex justify-center" style={{ gridArea: "aside" }}>
         Aside
       </div>
-      <div
-        className="py-2 flex justify-center"
-        style={{ gridArea: "main" }}
-      >
+      <div className="py-2 flex justify-center" style={{ gridArea: "main" }}>
         <GameGrid />
       </div>
     </div>
