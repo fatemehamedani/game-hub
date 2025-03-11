@@ -9,7 +9,7 @@ const App = () => {
       className="grid w-screen"
       style={{
         gridTemplateAreas: `"nav nav" "aside main"`,
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: "1fr",
         gridTemplateRows: "auto 2fr",
       }}
     >
@@ -23,7 +23,10 @@ const App = () => {
       <div className="py-2 flex justify-center" style={{ gridArea: "aside" }}>
         Aside
       </div>
-      <div className="py-2 flex justify-center" style={{ gridArea: "main" }}>
+      <div
+        className="py-2 w-full flex justify-center"
+        style={{ gridArea: "main" }}
+      >
         <GameGrid />
       </div>
     </div>
