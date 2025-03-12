@@ -8,10 +8,7 @@ const GameGrid = () => {
   return (
     <>
       {error && <p className="text-red-500">{error}</p>}
-      <div
-        className="grid gap-10 w-full mx-auto px-4"
-        style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
-      >
+      <div className="grid gap-10 w-full px-4 py-2 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {games.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
