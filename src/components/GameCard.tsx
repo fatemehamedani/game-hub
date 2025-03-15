@@ -1,5 +1,4 @@
 import { Game } from "../hooks/useGames";
-import getCroppedImageUrl from "../Services/image-url";
 import CriticScore from "./CriticScore";
 import PlatformIconList from "./PlatformIconList";
 
@@ -9,10 +8,10 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-md">
+    <div className="bg-gray-800 w-96 rounded-lg overflow-hidden shadow-md mr-4">
       <img
         className="w-full h-48 object-cover"
-        src={getCroppedImageUrl(game.background_image)}
+        src={game.background_image}
         alt={game.name}
       />
       <div className="p-2">
