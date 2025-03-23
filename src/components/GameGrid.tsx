@@ -1,5 +1,6 @@
 import useGame from "../hooks/useGames";
 import GameCard from "./GameCard";
+import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 const GameGrid = () => {
@@ -12,9 +13,15 @@ const GameGrid = () => {
       {error && <p className="text-red-500">{error}</p>}
       <div className="grid gap-10 w-full px-4 py-2 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {isLoading &&
-          skeletons.map((skeletons) => <GameCardSkeleton key={skeletons} />)}
+          skeletons.map((skeletons) => (
+            <GameCardContainer>
+              <GameCardSkeleton key={skeletons} />
+            </GameCardContainer>
+          ))}
         {games.map((game) => (
-          <GameCard key={game.id} game={game} />
+          <GameCardContainer>
+            <GameCard key={game.id} game={game} />
+          </GameCardContainer>
         ))}
       </div>
     </>
