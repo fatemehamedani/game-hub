@@ -3,3 +3,6 @@
 .dark {
   @apply bg-gray-900 text-white;
 }
+body, html{
+  overflow-x: hidden;
+}

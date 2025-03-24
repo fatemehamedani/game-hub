@@ -9,7 +9,7 @@ const NavBar = () => {
     >
       <HiOutlineCube className="text-5xl" />
       <h1>NavBar</h1>
-      <div className="ml-auto">
+      <div className="ml-auto mr-4">
         <ColorModeSwitch />
       </div>
     </div>

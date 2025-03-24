@@ -10,7 +10,7 @@ const App = () => {
       className="grid w-screen"
       style={{
         gridTemplateAreas: `"nav nav" "aside main"`,
-        gridTemplateColumns: "200px 1fr",
+        gridTemplateColumns: "170px 1fr",
         gridTemplateRows: "auto 2fr",
       }}
     >
