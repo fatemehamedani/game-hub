@@ -1,10 +1,14 @@
+import { useState } from "react";
 import "./App.css";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
+import { Genre } from "./hooks/useGenres";
 // import Theme from "./Theme";
 
 const App = () => {
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+
   return (
     <div
       className="grid w-screen"
@@ -22,13 +26,13 @@ const App = () => {
         {/* <Theme /> */}
       </div>
       <div className="py-2 flex justify-center" style={{ gridArea: "aside" }}>
-        <GenreList />
+        <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
       </div>
       <div
         className="py-2 w-full flex justify-center"
         style={{ gridArea: "main" }}
       >
-        <GameGrid />
+        <GameGrid selectedGenre={selectedGenre} />
       </div>
     </div>
   );

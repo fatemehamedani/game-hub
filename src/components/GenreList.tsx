@@ -1,6 +1,11 @@
 import useGenres from "../hooks/useGenres";
+import { Genre } from "../hooks/useGenres";
 
-const GenreList = () => {
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectGenre }: Props) => {
   const { Data, isLoading } = useGenres();
 
   if (isLoading) {
@@ -27,7 +32,10 @@ const GenreList = () => {
               src={genre.image_background}
               alt={genre.name}
             />
-            <p className="text-sm text-gray-900 dark:text-gray-400">
+            <p
+              onClick={() => onSelectGenre(genre)}
+              className="text-sm text-gray-900 dark:text-gray-400"
+            >
               {genre.name}
             </p>
           </li>
