@@ -26,7 +26,10 @@ const App = () => {
         {/* <Theme /> */}
       </div>
       <div className="py-2 flex justify-center" style={{ gridArea: "aside" }}>
-        <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+        <GenreList
+          selectedGenre={selectedGenre}
+          onSelectGenre={(genre) => setSelectedGenre(genre)}
+        />
       </div>
       <div
         className="py-2 w-full flex justify-center"

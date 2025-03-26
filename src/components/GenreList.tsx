@@ -3,9 +3,10 @@ import { Genre } from "../hooks/useGenres";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { Data, isLoading } = useGenres();
 
   if (isLoading) {
@@ -34,7 +35,11 @@ const GenreList = ({ onSelectGenre }: Props) => {
             />
             <p
               onClick={() => onSelectGenre(genre)}
-              className="text-sm text-gray-900 dark:text-gray-400"
+              className={`text-sm text-gray-900 dark:text-gray-400 ${
+                selectedGenre?.id === genre.id
+                  ? "text-blue-500 font-bold underline"
+                  : "text-gray-900"
+              }`}
             >
               {genre.name}
             </p>
