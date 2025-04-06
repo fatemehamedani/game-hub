@@ -5,10 +5,14 @@ import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
+import { Platform } from "./hooks/useGames";
 // import Theme from "./Theme";
 
 const App = () => {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
 
   return (
     <div
@@ -32,12 +36,20 @@ const App = () => {
           onSelectGenre={(genre) => setSelectedGenre(genre)}
         />
       </div>
-      <div
-        className="py-2 w-full flex justify-center"
-        style={{ gridArea: "main" }}
-      >
-        <PlatformSelector/>
-        <GameGrid selectedGenre={selectedGenre} />
+      <div className="py-2 w-full flex flex-col " style={{ gridArea: "main" }}>
+        <div className="w-full flex justify-start px-10">
+          <PlatformSelector
+            selectedPlatform={selectedPlatform}
+            onSelectedPlatform={(platform) => setSelectedPlatform(platform)}
+            className=""
+          />
+        </div>
+        <div className="w-full">
+          <GameGrid
+            selectedPlatform={selectedPlatform}
+            selectedGenre={selectedGenre}
+          />
+        </div>
       </div>
     </div>
   );
