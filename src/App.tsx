@@ -12,6 +12,7 @@ import SortSelector from "./components/SortSelector";
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 const App = () => {
@@ -49,7 +50,13 @@ const App = () => {
             className=""
           />
           <div className="w-full flex justify-start px-5">
-            <SortSelector className="" />
+            <SortSelector
+              sortOrder={gameQuery.sortOrder}
+              onSelectSortOrder={(sortOrder) =>
+                setGameQuery({ ...gameQuery, sortOrder })
+              }
+              className=""
+            />
           </div>
         </div>
         <div className="w-full">
