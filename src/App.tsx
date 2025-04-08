@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
+import SortSelector from "./components/SortSelector";
 // import Theme from "./Theme";
 
 export interface GameQuery {
@@ -47,6 +48,9 @@ const App = () => {
             }
             className=""
           />
+          <div className="w-full flex justify-start px-5">
+            <SortSelector className="" />
+          </div>
         </div>
         <div className="w-full">
           <GameGrid gameQuery={gameQuery} />
