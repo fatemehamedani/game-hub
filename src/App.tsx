@@ -27,10 +27,7 @@ const App = () => {
         gridTemplateRows: "auto 2fr",
       }}
     >
-      <div
-        className="flex justify-between items-center"
-        style={{ gridArea: "nav" }}
-      >
+      <div className="w-full" style={{ gridArea: "nav" }}>
         <NavBar />
         {/* <Theme /> */}
       </div>

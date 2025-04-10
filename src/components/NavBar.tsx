@@ -1,5 +1,6 @@
 import { HiOutlineCube } from "react-icons/hi";
 import ColorModeSwitch from "./ColorModeSwitch";
+import SearchInput from "./SearchInput";
 
 const NavBar = () => {
   return (
@@ -9,6 +10,9 @@ const NavBar = () => {
     >
       <HiOutlineCube className="text-5xl" />
       <h1>NavBar</h1>
+      <div className="mx-auto px-7">
+        <SearchInput />
+      </div>
       <div className="ml-auto mr-4">
         <ColorModeSwitch />
       </div>
