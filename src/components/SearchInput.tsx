@@ -1,6 +1,20 @@
-const SearchInput = () => {
+import { useRef } from "react";
+
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const SearchInput = ({ onSearch }: Props) => {
+  const ref = useRef<HTMLInputElement>(null);
+
   return (
-    <form className="flex items-center justify-center w-full px-72">
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        if (ref.current) onSearch(ref.current.value);
+      }}
+      className="flex items-center justify-center w-full px-72"
+    >
       <label className="sr-only">Search</label>
 
       <div className="flex w-[600px] max-w-full">
@@ -10,6 +24,7 @@ const SearchInput = () => {
           className=" bg-gray-50 border text-gray-900 text-sm rounded-lg focus:border-blue-500 w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Search games..."
           required
+          ref={ref}
         />
         <button
           type="submit"

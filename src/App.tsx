@@ -13,6 +13,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 const App = () => {
@@ -28,7 +29,9 @@ const App = () => {
       }}
     >
       <div className="w-full" style={{ gridArea: "nav" }}>
-        <NavBar />
+        <NavBar
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        />
         {/* <Theme /> */}
       </div>
       <div className="py-2 flex justify-center" style={{ gridArea: "aside" }}>
