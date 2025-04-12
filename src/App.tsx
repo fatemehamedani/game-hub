@@ -7,6 +7,7 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 // import Theme from "./Theme";
 
 export interface GameQuery {
@@ -41,6 +42,7 @@ const App = () => {
         />
       </div>
       <div className="py-2 w-full flex flex-col " style={{ gridArea: "main" }}>
+        <GameHeading gameQuery={gameQuery} />
         <div className="w-full flex justify-start px-10">
           <PlatformSelector
             selectedPlatform={gameQuery.platform}
