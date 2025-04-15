@@ -21,32 +21,35 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   }
 
   return (
-    <div className="w-48 text-white h-screen p-4 ">
-      <ul className="space-y-4">
-        {Data.map((genre) => (
-          <li
-            className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform"
-            key={genre.id}
-          >
-            <img
-              className="w-8 h-8 rounded-md object-cover"
-              src={genre.image_background}
-              alt={genre.name}
-            />
-            <p
-              onClick={() => onSelectGenre(genre)}
-              className={`text-sm text-gray-900 dark:text-gray-400 ${
-                selectedGenre?.id === genre.id
-                  ? "text-blue-500 font-bold underline"
-                  : "text-gray-900"
-              }`}
+    <h1>
+      <header className="px-4 text-3xl font-medium">Genre</header>
+      <div className="w-48 text-white h-screen p-4 ">
+        <ul className="space-y-4">
+          {Data.map((genre) => (
+            <li
+              className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform"
+              key={genre.id}
             >
-              {genre.name}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </div>
+              <img
+                className="w-8 h-8 rounded-md object-cover"
+                src={genre.image_background}
+                alt={genre.name}
+              />
+              <p
+                onClick={() => onSelectGenre(genre)}
+                className={`text-sm text-gray-900 dark:text-gray-400 ${
+                  selectedGenre?.id === genre.id
+                    ? "text-blue-500 font-bold underline"
+                    : "text-gray-900"
+                }`}
+              >
+                {genre.name}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </h1>
   );
 };
 
