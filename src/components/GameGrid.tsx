@@ -10,7 +10,7 @@ interface Props {
 
 const GameGrid = ({ gameQuery }: Props) => {
   const { Data, error, isLoading } = useGame(gameQuery);
-  const column = 4;
+  const column = { sm: 1, md: 2, lg: 3, xl: 4 };
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
