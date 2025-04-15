@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
-.dark {
-  @apply bg-gray-900 text-white;
+html.dark {
+  background-color: #111827;
+  color: white;
 }
-body, html{
+body,
+html {
   overflow-x: hidden;
 }
-form{
+form {
   width: 100%;
 }

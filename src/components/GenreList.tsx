@@ -22,7 +22,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
   return (
     <h1>
-      <header className="px-4 text-3xl font-medium">Genre</header>
+      <header className="text-3xl font-medium px-4">Genre</header>
       <div className="w-48 text-white h-screen p-4 ">
         <ul className="space-y-4">
           {Data.map((genre) => (

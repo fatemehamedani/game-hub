@@ -6,7 +6,7 @@ interface Props {
 
 const GameCardContainer = ({ children }: Props) => {
   return (
-    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-md">
+    <div className="bg-gray-100 dark:bg-gray-800 overflow-hidden rounded-lg shadow-md transition-colors duration-300">
       {children}
     </div>
   );

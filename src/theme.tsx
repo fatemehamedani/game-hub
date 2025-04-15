@@ -1,5 +1,5 @@
 import { MdDarkMode } from "react-icons/md";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Theme = () => {
   const [darkMode, setDarkMode] = useState(false);

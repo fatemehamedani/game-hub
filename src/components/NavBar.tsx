@@ -13,7 +13,7 @@ const NavBar = ({ onSearch }: Props) => {
       style={{ gridArea: "nav" }}
     >
       <HiOutlineCube className="text-5xl" />
-      <h1>NavBar</h1>
+      <h1></h1>
       <div className="mx-auto px-7">
         <SearchInput onSearch={onSearch} />
       </div>
