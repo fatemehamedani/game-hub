@@ -7,7 +7,9 @@ interface Props {
 }
 
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
-  const { Data, isLoading } = useGenres();
+  const { data, isLoading, error } = useGenres();
+
+  if (error) return null;
 
   if (isLoading) {
     return (
@@ -25,7 +27,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
       <header className="text-3xl font-medium px-4">Genre</header>
       <div className="w-48 text-white h-screen p-4 ">
         <ul className="space-y-4">
-          {Data.map((genre) => (
+          {data?.results.map((genre) => (
             <li
               className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform"
               key={genre.id}
