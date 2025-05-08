@@ -13,7 +13,7 @@ const useDate = <T>(
   requestConfig?: AxiosRequestConfig,
   deps?: any[]
 ) => {
-  const [Data, setData] = useState<T[]>([]);
+  const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
@@ -40,6 +40,6 @@ const useDate = <T>(
     deps ? [...deps] : []
   );
 
-  return { Data, error, isLoading };
+  return { data, error, isLoading };
 };
 export default useDate;
