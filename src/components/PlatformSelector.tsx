@@ -1,7 +1,6 @@
 import { useState } from "react";
-import usePlatforms from "../hooks/usePlatforms";
+import usePlatforms, { Platform } from "../hooks/usePlatforms";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { Platform } from "../hooks/useGames";
 
 interface Props {
   selectedPlatform: Platform | null;
