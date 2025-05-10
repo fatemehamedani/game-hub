@@ -3,18 +3,22 @@ import usePlatforms, { Platform } from "../hooks/usePlatforms";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 interface Props {
-  selectedPlatform: Platform | null;
+  selectedPlatformId?: number;
   onSelectedPlatform: (platform: Platform) => void;
   className?: string;
 }
 
 const PlatformSelector = ({
   className,
-  selectedPlatform,
+  selectedPlatformId,
   onSelectedPlatform,
 }: Props) => {
   const { data, error } = usePlatforms();
   const [open, setOpen] = useState(false);
+
+  const selectedPlatform = data?.results.find(
+    (p) => p.id === selectedPlatformId
+  );
 
   if (error) return <div>{error.message}</div>;
 
