@@ -1,9 +1,8 @@
-import useGenres from "../hooks/useGenres";
-import { Genre } from "../hooks/useGenres";
+import useGenres, { Genre } from "../hooks/useGenres";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenreId?:number;
+  selectedGenreId?: number;
 }
 
 const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
@@ -27,7 +26,7 @@ const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
       <header className="text-3xl font-medium px-4">Genre</header>
       <div className="w-48 text-white h-screen p-4 ">
         <ul className="space-y-4">
-          {data?.results.map((genre) => (
+          {data?.results.map((genre: Genre) => (
             <li
               className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform"
               key={genre.id}

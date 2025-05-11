@@ -1,6 +1,7 @@
 import { useState } from "react";
 import usePlatforms, { Platform } from "../hooks/usePlatforms";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import usePlatform from "../hooks/usePlatform";
 
 interface Props {
   selectedPlatformId?: number;
@@ -16,9 +17,7 @@ const PlatformSelector = ({
   const { data, error } = usePlatforms();
   const [open, setOpen] = useState(false);
 
-  const selectedPlatform = data?.results.find(
-    (p) => p.id === selectedPlatformId
-  );
+  const selectedPlatform = usePlatform(selectedPlatformId);
 
   if (error) return <div>{error.message}</div>;
 
