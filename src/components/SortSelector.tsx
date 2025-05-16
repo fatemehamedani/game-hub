@@ -1,12 +1,7 @@
 import { useState } from "react";
+import useGameQueryStore from "../store";
 
-interface Props {
-  sortOrder: string;
-  onSelectSortOrder: (sortOrder: string) => void;
-  className?: string;
-}
-
-const SortSelector = ({ className, onSelectSortOrder, sortOrder }: Props) => {
+const SortSelector = () => {
   const [showDropdown, setShowDropDown] = useState(false);
 
   const toggleDropdown = () => {
@@ -22,12 +17,14 @@ const SortSelector = ({ className, onSelectSortOrder, sortOrder }: Props) => {
     { value: "-rating", label: "Average rating" },
   ];
 
+  const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
+  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const currentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder
   );
 
   return (
-    <div className={`w-60 relative${className}`}>
+    <div className="w-60 relative">
       <button
         onClick={toggleDropdown}
         id="dropdownDefaultButton"
@@ -61,7 +58,7 @@ const SortSelector = ({ className, onSelectSortOrder, sortOrder }: Props) => {
           {sortOrders.map((order) => (
             <button
               className="block w-full px-4 py-2 text-sm text-white hover:bg-gray-100 focus:outline-none text-left"
-              onClick={() => onSelectSortOrder(order.value)}
+              onClick={() => setSortOrder(order.value)}
               key={order.value}
             >
               {order.label}

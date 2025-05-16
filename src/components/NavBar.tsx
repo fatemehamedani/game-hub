@@ -2,11 +2,7 @@ import { HiOutlineCube } from "react-icons/hi";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-interface Props {
-  onSearch: (searchText: string) => void;
-}
-
-const NavBar = ({ onSearch }: Props) => {
+const NavBar = () => {
   return (
     <div
       className="flex justify-between items-center w-full"
@@ -15,7 +11,7 @@ const NavBar = ({ onSearch }: Props) => {
       <HiOutlineCube className="text-5xl" />
       <h1></h1>
       <div className="mx-auto px-7">
-        <SearchInput onSearch={onSearch} />
+        <SearchInput />
       </div>
       <div className="ml-auto mr-4">
         <ColorModeSwitch />
