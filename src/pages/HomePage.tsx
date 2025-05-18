@@ -1,13 +1,10 @@
-import "./App.css";
-import GameGrid from "./components/GameGrid";
-import GameHeading from "./components/GameHeading";
-import GenreList from "./components/GenreList";
-import NavBar from "./components/NavBar";
-import PlatformSelector from "./components/PlatformSelector";
-import SortSelector from "./components/SortSelector";
-// import Theme from "./Theme";
+import GameGrid from "../components/GameGrid";
+import GameHeading from "../components/GameHeading";
+import GenreList from "../components/GenreList";
+import PlatformSelector from "../components/PlatformSelector";
+import SortSelector from "../components/SortSelector";
 
-const App = () => {
+const HomePage = () => {
   return (
     <div
       className="grid w-screen"
@@ -17,10 +14,6 @@ const App = () => {
         gridTemplateRows: "auto 2fr",
       }}
     >
-      <div className="w-full" style={{ gridArea: "nav" }}>
-        <NavBar />
-        {/* <Theme /> */}
-      </div>
       <div className="py-2 flex justify-center" style={{ gridArea: "aside" }}>
         <GenreList />
       </div>
@@ -40,4 +33,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default HomePage;
