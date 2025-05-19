@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Game } from "../hooks/useGames";
 import CriticScore from "./CriticScore";
 import Emoji from "./Emoji";
@@ -10,7 +11,7 @@ const GameCard = ({ game }: Props) => {
   return (
     <div>
       <img
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-cover "
         src={game.background_image}
         alt={game.name}
       />
@@ -20,7 +21,7 @@ const GameCard = ({ game }: Props) => {
         />
         <CriticScore score={game.metacritic} />
         <h2 className="text-white text-lg font-bold">
-          {game.name}
+          <Link to={"/games" + game.slug}> {game.name}</Link>
           <Emoji rating={game.rating_top} />
         </h2>
       </div>
