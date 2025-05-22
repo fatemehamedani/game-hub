@@ -1,6 +1,7 @@
 import { HiOutlineCube } from "react-icons/hi";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -8,7 +9,9 @@ const NavBar = () => {
       className="flex justify-between items-center w-full"
       style={{ gridArea: "nav" }}
     >
-      <HiOutlineCube className="text-5xl" />
+      <Link to="/">
+        <HiOutlineCube className="text-5xl" />
+      </Link>
       <h1></h1>
       <div className="mx-auto px-7">
         <SearchInput />
