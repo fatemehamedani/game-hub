@@ -1,7 +1,7 @@
 import { HiOutlineCube } from "react-icons/hi";
+import { Link } from "react-router-dom";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
-import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (

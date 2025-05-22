@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import useGameQueryStore from "../store";
 import { useNavigate } from "react-router-dom";
+import useGameQueryStore from "../store";
 
 const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
