@@ -3,7 +3,7 @@ import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
 import useGame from "../hooks/useGame";
-import GameScreenShots from "../components/GameScreenShots";
+import GameScreenShots from "../components/GameScreenshots";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -14,13 +14,20 @@ const GameDetailPage = () => {
   if (error || !game) throw error;
 
   return (
-    <>
-      <header className="py-1.5 mx-1">{game.name}</header>
-      <ExpandableText>{game.description_raw}</ExpandableText>
-      <GameAttributes game={game} />
-      <GameTrailer gameId={game.id} />
-      <GameScreenShots gameId={game.id} />
-    </>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <header className="py-1.5 mx-1 text-xl font-bold">{game.name}</header>
+        <ExpandableText>{game.description_raw}</ExpandableText>
+        <GameAttributes game={game} />
+      </div>
+
+      <div>
+        <GameTrailer gameId={game.id} />
+        <div className="mt-4">
+          <GameScreenShots gameId={game.id} />
+        </div>
+      </div>
+    </div>
   );
 };
 
